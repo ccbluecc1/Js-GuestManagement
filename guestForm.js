@@ -82,7 +82,7 @@ function guestForm() {
       lastname: getIdremove[1]
     }
     guests.removeGuest(getname)
-    displayGuests(guests.getAllGuests())s
+    displayGuests(guests.getAllGuests())
   }
 
   return {
