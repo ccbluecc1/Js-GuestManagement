@@ -75,20 +75,14 @@ function guestForm() {
 
   // 6. Function to remove a guest
   function removeGuest(event) {
-    const removeIcon = event.target
-    const guestDiv = removeIcon.parentNode
-    const guestName = guestDiv.firstChild.textContent.split(' ')
-    const deleteGuest = {
-      firstname: guestName[0],
-      lastname: guestName[1]
+    const remove = event.target
+    const getIdremove = remove.getAttribute('id').split('-')
+    const getname = {
+      firstname: getIdremove[0],
+      lastname: getIdremove[1]
     }
-
-    // Remove guest from the list using GuestManagement class
-    guestList.removeGuest(deleteGuest)
-
-    // Remove the guest div element from the display area
-    const displayArea = document.getElementById('display-area')
-    displayArea.removeChild(guestDiv)
+    guests.removeGuest(getname)
+    displayGuests(guests.getAllGuests())s
   }
 
   return {
